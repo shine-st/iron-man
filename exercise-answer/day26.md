@@ -21,6 +21,8 @@
 ```scala
   def sequence[A](fas: List[F[A]]): F[List[A]] =
     fas.foldRight(unit(List[A]()))((fa, acc) => fa.map2(acc)(_ :: _))
+//    the other way
+//    traverse(fas)(fs => fs) 
 ```
 
 **Exercise D26-3 answer**
